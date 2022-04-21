@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+const Data=[
+           {
+          head1:"Mobile operating system",
+          con:["Android","Blackberry","Iphone","window phone" ]
+           },
+           {
+            head1:"Mobile Manufactures",
+            con:["Samsung","HTC","Micromax","Apple"]
+             },
+]
 
-function App() {
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="box"><h1>
+
+         <ul>
+         {
+           Data.map((e)=>{
+         return <ul>{e.head1}   {e.con.map((el)=>(
+          <li className={`${el.con%2===0 ? "circleList":"squareList"}`}>{el}</li>
+    
+         ))}</ul>
+         
+         })}
+       
+      </ul>
+    </h1>
+    
+    
+   
+    </div>
     </div>
   );
 }
-
-export default App;
